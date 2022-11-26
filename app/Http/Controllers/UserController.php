@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\Foundation\Application;
+use App\Models\Flight;
 
 class UserController extends Controller
 {
@@ -85,6 +86,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $flight = User::find($id);
+        $flight->delete();
+        return response()->json([
+            'status'=> 'success'
+        ]);
     }
 }
