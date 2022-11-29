@@ -18,7 +18,7 @@ class UserController extends Controller
      */
     public function index(): Factory|View|Application
     {
-        return view('users.index', [
+        return view("users.index", [
             'users' => User::paginate(3)
         ]);
     }
@@ -30,7 +30,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view("procucts.create");
     }
 
     /**
