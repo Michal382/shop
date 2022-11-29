@@ -11,11 +11,11 @@
                     <form method="POST" action="{{ route('products.store') }}">
                         @csrf
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">Nazwa</label>
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">Nazwa</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" maxlenght="500" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" maxlength="500" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -25,11 +25,11 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="description" maxlenght="1500" class="col-md-4 col-form-label text-md-end">Opis</label>
+                        <div class="form-group row">
+                            <label for="description" class="col-md-4 col-form-label text-md-right">Opis</label>
 
                             <div class="col-md-6">
-                                <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" autofocus>{{ old('description') }}</textarea>
+                                <textarea id="description" maxlength="1500" class="form-control @error('description') is-invalid @enderror" name="description" autofocus>{{ old('description') }}</textarea>
 
                                 @error('description')
                                     <span class="invalid-feedback" role="alert">
@@ -37,10 +37,10 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>    
+                        </div>
 
-                        <div class="row mb-3">
-                            <label for="amount" class="col-md-4 col-form-label text-md-end">Ilość</label>
+                        <div class="form-group row">
+                            <label for="amount" class="col-md-4 col-form-label text-md-right">Ilość</label>
 
                             <div class="col-md-6">
                                 <input id="amount" type="number" min="0" class="form-control @error('amount') is-invalid @enderror" name="amount" value="{{ old('amount') }}" required autocomplete="amount" autofocus>
@@ -53,8 +53,8 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="price" class="col-md-4 col-form-label text-md-end">Cena</label>
+                        <div class="form-group row">
+                            <label for="price" class="col-md-4 col-form-label text-md-right">Cena</label>
 
                             <div class="col-md-6">
                                 <input id="price" type="number" step="0.01" min="0" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price">
@@ -67,10 +67,10 @@
                             </div>
                         </div>
 
-                        <div class="row mb-0">
+                        <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                   Zapisz
+                                    Zapisz
                                 </button>
                             </div>
                         </div>
