@@ -18,9 +18,10 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nazwa</th>
-      <th scope="col">Description</th>
+      <th scope="col">Opis</th>
       <th scope="col">Ilość</th>
       <th scope="col">Cena</th>
+      <th scope="col">Kategoria</th>
       <th scope="col">Akcje</th>
     </tr>
   </thead>
@@ -32,6 +33,7 @@
             <td>{{$product->description}}</td>
             <td>{{$product->amount}}</td>
             <td>{{$product->price}}</td>
+            <td>@if($product->hasCategory()){{ $product->category->name }}@endif</td>
             <td>
  
             <a href="{{ route('products.show', $product->id ) }}">
