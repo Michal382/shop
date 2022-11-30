@@ -29,7 +29,7 @@
                             <label for="description" maxlenght="1500" class="col-md-4 col-form-label text-md-end">Opis</label>
 
                             <div class="col-md-6">
-                                <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" autofocus>{{ $product->description }}</textarea>
+                                <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" required autofocus>{{ $product->description }}</textarea>
 
                                 @error('description')
                                     <span class="invalid-feedback" role="alert">
@@ -71,13 +71,20 @@
                             <label for="image" class="col-md-4 col-form-label text-md-right">Grafika</label>
 
                             <div class="col-md-6">
-                                <input id="image" type="file" class="form-control" name="image">
+                                <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image">
+                                @error('image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="form-group row justify-content-center">
                             <div class="col-md-6">
+                                @if(!is_null($product->image_path))
                                 <img src="{{ asset('storage/' . $product->image_path) }}" alt="Zdjęcie produktu">
+                                @endif
                             </div>
                         </div>
 
