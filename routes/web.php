@@ -4,6 +4,7 @@ use App\Http\Controllers\HelloWorldController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', [WelcomeController::class, 'index']);
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index')->middleware('auth');
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create')->middleware('auth');

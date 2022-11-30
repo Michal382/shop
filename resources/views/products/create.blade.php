@@ -8,10 +8,10 @@
                 <div class="card-header">Dodawanie produktu</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('products.store') }}">
+                    <form method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data">
                         @csrf
 
-                        <div class="form-group row">
+                        <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Nazwa</label>
 
                             <div class="col-md-6">
@@ -25,7 +25,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="row mb-3">
                             <label for="description" class="col-md-4 col-form-label text-md-right">Opis</label>
 
                             <div class="col-md-6">
@@ -39,7 +39,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="row mb-3">
                             <label for="amount" class="col-md-4 col-form-label text-md-right">Ilość</label>
 
                             <div class="col-md-6">
@@ -53,7 +53,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="row mb-3">
                             <label for="price" class="col-md-4 col-form-label text-md-right">Cena</label>
 
                             <div class="col-md-6">
@@ -66,6 +66,15 @@
                                 @enderror
                             </div>
                         </div>
+                        
+                        <div class="row mb-3">
+                            <label for="image" class="col-md-4 col-form-label text-md-right">Grafika</label>
+
+                            <div class="col-md-6">
+                                <input id="image" type="file" class="form-control" name="image">
+                            </div>
+                            <br></br>
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
