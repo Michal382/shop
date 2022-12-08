@@ -7,10 +7,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\Flight;
-use App\Models\ProductCategory;
 use App\Http\Requests\StoreProductRequest;
-use Exception;
-
 
 
 class ProductController extends Controller
@@ -34,9 +31,7 @@ class ProductController extends Controller
      */
     public function create(): View
     {
-        return view("products.create", [
-            'categories' => ProductCategory::all()
-        ]);
+        return view("products.create");
     }
 
     /**
@@ -77,8 +72,7 @@ class ProductController extends Controller
     public function edit(Product $product): View
     {
         return view("products.edit", [
-            'product' => $product,
-            'categories' => ProductCategory::all()
+            'product' => $product
         ]);
     }
 
